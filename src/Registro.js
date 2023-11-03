@@ -8,7 +8,6 @@ import './Registro.css';
 import { useNavigate } from "react-router-dom";
 
 export default function Registro() {
-
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -31,8 +30,16 @@ export default function Registro() {
         setFormData({ ...formData, [name]: date });
     };
 
+    const isFormValid = () => {
+        return Object.values(formData).every((value) => value.trim() !== "");
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!isFormValid()) {
+            alert("Por favor, complete todos los campos antes de registrar.");
+            return;
+        }
         try {
             // Realiza una solicitud POST al backend para crear el registro
             const response = await axios.post("https://scriptmarket.onrender.com/registro", formData);
@@ -47,7 +54,6 @@ export default function Registro() {
     const redirectToLogin = () => {
         navigate("/");
     };
-
 
     return (
         <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
@@ -98,7 +104,6 @@ export default function Registro() {
                     <button type="submit" className="btn btn-primary rounded-0">Registrar</button>
                     <button type="button" className="btn btn-primary rounded-0" onClick={redirectToLogin}>Iniciar Sesión</button>
                 </form>
-
             </div>
         </div>
     );
