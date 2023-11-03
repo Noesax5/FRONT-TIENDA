@@ -41,13 +41,10 @@ export default function Registro() {
             return;
         }
         try {
-            // Realiza una solicitud POST al backend para crear el registro
             const response = await axios.post("https://scriptmarket.onrender.com/registro", formData);
             console.log("Registro exitoso", response.data);
-            // Puedes redirigir al usuario a una página de confirmación o realizar otras acciones aquí
         } catch (error) {
             console.error("Error en el registro", error);
-            // Puedes mostrar un mensaje de error al usuario o tomar otras acciones
         }
     };
 
