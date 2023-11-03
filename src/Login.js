@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './Login.css'; 
+import { API_URL } from "./config";
 
 export default function Login() {
   const [dni, setDNI] = useState("");
@@ -13,7 +14,7 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("https://scriptmarket.onrender.com/login", {
+      const response = await axios.post(API_URL+"/login", {
         dni,
         correo,
       });
