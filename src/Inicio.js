@@ -18,7 +18,7 @@ export default function Inicio() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/productos")
+      .get("https://scriptmarket.onrender.com/productos")
       .then((response) => {
         setProductos(response.data);
       })

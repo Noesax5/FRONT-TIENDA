@@ -13,7 +13,7 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8081/login", {
+      const response = await axios.post("https://scriptmarket.onrender.com/login", {
         dni,
         correo,
       });

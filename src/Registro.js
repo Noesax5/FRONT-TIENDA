@@ -35,7 +35,7 @@ export default function Registro() {
         e.preventDefault();
         try {
             // Realiza una solicitud POST al backend para crear el registro
-            const response = await axios.post("http://localhost:8081/registro", formData);
+            const response = await axios.post("https://scriptmarket.onrender.com/registro", formData);
             console.log("Registro exitoso", response.data);
             // Puedes redirigir al usuario a una página de confirmación o realizar otras acciones aquí
         } catch (error) {
