@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import './Login.css'; // Archivo CSS personalizado
+import './Login.css'; 
 
 export default function Login() {
   const [dni, setDNI] = useState("");
